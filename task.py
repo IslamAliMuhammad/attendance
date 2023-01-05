@@ -35,8 +35,8 @@ def get_attendance(employee_code, date):
         result["duration"] = str(duration)
     elif len(attendance) == 3:
         next_day = datetime.strptime(date, "%Y-%m-%d") + timedelta(days=1)
-        duration = attendance[1][1] - \
-            attendance[0][1] + (next_day - attendance[2][1])
+        duration = attendance[1][1] - attendance[0][1] + (next_day - attendance[2][1])
+        
         result["duration"] = str(duration)
     elif len(attendance) == 1:
         action = attendance[0][0]
